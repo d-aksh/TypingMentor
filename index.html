@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/font-awesome/all.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <title>Typing Mentor</title>
+  </head>
+
+  <body>
+    <div id="overlay-main">
+      <div class="overlay-container">
+        <div class="cross">
+          <i class="fas fa-times" onclick="dissmissOverlay()"></i>
+        </div>
+        <div class="heading">
+          <h1>Welcome,</h1>
+        </div>
+        <div class="summary">
+          Level Up your typing skills with this free forever website <br />Take
+          a typing test, practice typing lessons, learn to type faster.<br />
+          <br />
+          Enjoy :)
+        </div>
+      </div>
+    </div>
+
+    <div class="output">
+      <div class="result">
+        <div class="stats speed">
+          Speed:
+          <span class="stat-digits"
+            ><span id="speed">0 </span>&#40;
+            <i id="speed-diff-arrow" class="fas fa-long-arrow-alt-down"></i>
+            <span id="speed-diff"> 0 </span>&#41;</span
+          >
+        </div>
+        <div class="stats errors">
+          Errors:
+          <span class="stat-digits">
+            <span id="error">0 </span>&#40;
+            <i id="error-diff-arrow" class="fas fa-long-arrow-alt-up"> </i
+            ><span id="error-diff"> 0 </span> &#41;
+          </span>
+        </div>
+        <div class="stats score">
+          Score:
+          <span class="stat-digits">
+            <span id="score">0 </span>&#40;
+            <i id="score-diff-arrow" class="fas fa-long-arrow-alt-down"> </i
+            ><span id="score-diff"> 0 </span> &#41;
+          </span>
+        </div>
+        <div class="stats average">
+          <span class="speed-avg"
+            >Average typing speed: <span id="speed-avg">0.0wpm</span></span
+          >
+          <span class="speed-best">
+            Best typing speed:<span id="speed-best"> 0.0wpm</span></span
+          >
+          <span class="score-avg">
+            Average score: <span id="score-avg">0.0</span></span
+          >
+        </div>
+      </div>
+
+      <div id="practice-type">
+        <div id="paused-overlay"><span>Click to Activate</span></div>
+        <div class="challenge-string"></div>
+      </div>
+    </div>
+
+    <div class="keyboard">
+      <div class="row">
+        <div class="key double Backquote">~ <span>`</span></div>
+        <div class="key double Digit1">! <span>1</span></div>
+        <div class="key double Digit2">@ <span>2</span></div>
+        <div class="key double Digit3"># <span>3</span></div>
+        <div class="key double Digit4">$ <span>4</span></div>
+        <div class="key double Digit5">% <span>5</span></div>
+        <div class="key double Digit6">^ <span>6</span></div>
+        <div class="key double Digit7">& <span>7</span></div>
+        <div class="key double Digit8">* <span>8</span></div>
+        <div class="key double Digit9">&lpar; <span>9</span></div>
+        <div class="key double Digit0">&rpar; <span>0</span></div>
+        <div class="key double Minus">_ <span>-</span></div>
+        <div class="key double Equal">+ <span>=</span></div>
+        <div class="key backspace Backspace">Backspace</div>
+      </div>
+      <div class="row">
+        <div class="key tab Tab">Tab</div>
+        <div class="key KeyQ">Q</div>
+        <div class="key KeyW">W</div>
+        <div class="key KeyE">E</div>
+        <div class="key KeyR">R</div>
+        <div class="key KeyT">T</div>
+        <div class="key KeyY">Y</div>
+        <div class="key KeyU">U</div>
+        <div class="key KeyI">I</div>
+        <div class="key KeyO">O</div>
+        <div class="key KeyP">P</div>
+        <div class="key double BracketLeft">&lbrace; <span>&lbrack;</span></div>
+        <div class="key double BracketRight">
+          &rbrace; <span>&rbrack;</span>
+        </div>
+        <div class="key double slash Backslash">&vert;<span>&bsol;</span></div>
+      </div>
+      <div class="row">
+        <div class="key caps-lock CapsLock">Caps Lock</div>
+        <div class="key KeyA">A</div>
+        <div class="key KeyS">S</div>
+        <div class="key KeyD">D</div>
+        <div class="key KeyF">F</div>
+        <div class="key KeyG">G</div>
+        <div class="key KeyH">H</div>
+        <div class="key KeyJ">J</div>
+        <div class="key KeyK">K</div>
+        <div class="key KeyL">L</div>
+        <div class="key double Semicolon">: <span>;</span></div>
+        <div class="key double Quote">" <span>'</span></div>
+        <div class="key enter Enter">Enter</div>
+      </div>
+      <div class="row">
+        <div class="key shift ShiftLeft">Shift</div>
+        <div class="key KeyZ">Z</div>
+        <div class="key KeyX">X</div>
+        <div class="key KeyC">C</div>
+        <div class="key KeyV">V</div>
+        <div class="key KeyB">B</div>
+        <div class="key KeyN">N</div>
+        <div class="key KeyM">M</div>
+        <div class="key double Comma">&lt; <span>,</span></div>
+        <div class="key double Period">&gt; <span>.</span></div>
+        <div class="key double Slash">? <span>/</span></div>
+        <div class="key shift ShiftRight">Shift</div>
+      </div>
+      <div class="row">
+        <div class="key ControlLeft">Ctrl</div>
+        <div class="key MetaLeft MetaRight"><i class="fab fa-windows"></i></div>
+        <div class="key AltLeft">Alt</div>
+        <div class="key space Space">Space</div>
+        <div class="key AltRight">Alt</div>
+        <div class="key ControlRight">Ctrl</div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
